@@ -1,0 +1,233 @@
+﻿@model webproje.Models.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        color: #6a6f8c;
+        background: #c8c8c8;
+    }
+</style>
+<main>
+    <!-- slider Area Start--
+    <div class="slider-area ">
+        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap pt-100">
+                            <h2>About us</h2>
+                            <nav aria-label="breadcrumb ">
+                                <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Product</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End-->
+    <!-- About Area Start -->
+    <div class="slider-area ">
+        <div class="slider-active">
+            <div class="single-slider  hero-overly slider-height d-flex align-items-center" data-background="../../temp/readBy/assets/img/hero/h1_hero.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-11">
+                            <div class="login-wrap">
+                                <div class="login-html" style="padding-top:40px;">
+                                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Giriş Yap</label>
+                                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Üye Ol</label>
+                                    <div class="login-form">
+                                       
+                                        <div class="sign-in-htm" style="margin-top:10px;">
+                                            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                                            {
+                                            <div class="group">
+                                                <label for="user" class="label">Kullanıcı Adı</label>
+                                                @Html.TextBoxFor(m => m.userName,new { @id = "user", @type = "text", @class = "input" })
+                                            </div>
+                                            <div class="group">
+                                                <label for="pass" class="label">Şifre</label>
+                                                @Html.TextBoxFor(m => m.userPass, new { @id = "pass", @type = "password", @class = "input"  })
+                                            </div>
+                                            <div class="group">
+                                                <input type="submit" class="button" value="Giriş Yap">
+                                            </div>
+                                            <div class="hr"></div>
+                                            
+                                            }
+                                        </div>
+                                        <div class="sign-up-htm">
+                                           @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                                            {
+                                                <div class="group">
+                                                    <label for="user" class="label">Kullanıcı Adı</label>
+                                                    @Html.TextBoxFor(m => m.userName, new { @id = "user", @type = "text", @class = "input" })
+                                                </div>
+                                                <div class="group">
+                                                    <label for="pass" class="label">Parola</label>
+                                                    @Html.TextBoxFor(m => m.userPass, new { @id = "user", @type = "password", @class = "input" })
+                                                </div>
+                                                <div class="group">
+                                                    <label for="pass" class="label">Mail Adresi</label>
+                                                    @Html.TextBoxFor(m => m.eMail, new { @id = "user", @type = "text", @class = "input" })
+
+                                                </div>
+                                                <div class="group">
+                                                    <label for="user" class="label">Adınız</label>
+                                                    @Html.TextBoxFor(m => m.name, new { @id = "user", @type = "text", @class = "input" })
+
+                                                </div>
+                                                <div class="group">
+                                                    <label for="user" class="label">Soyadınız</label>
+                                                    @Html.TextBoxFor(m => m.lastName, new { @id = "user", @type = "text", @class = "input" })
+
+                                                </div>
+                                                <div class="group">
+                                                    <label for="user" class="label">İban</label>
+                                                    @Html.TextBoxFor(m => m.Iban, new { @id = "user", @type = "text", @class = "input" })
+
+                                                </div>
+                                                <div class="group">
+                                                    <input type="submit" class="button" value="Kayıt Ol">
+                                                </div>
+                                                <div class="hr"></div>
+                                            }
+                                               
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Area End -->
+    <!-- Testimonial Start
+    <div class="testimonial-area t-bg testimonial-padding">
+        <div class="container ">
+            <div class="row">
+                <div class="col-xl-12">
+                    <!-- Section Tittle
+                    <div class="section-tittle section-tittle6 mb-50">
+                        <div class="front-text">
+                            <h2 class="">Testimonial</h2>
+                        </div>
+                        <span class="back-text">Feedback</span>
+                    </div>
+                </div>
+            </div>
+           <div class="row">
+                <div class="col-xl-10 col-lg-11 col-md-10 offset-xl-1">
+                    <div class="h1-testimonial-active">
+                        <!-- Single Testimonial
+                        <div class="single-testimonial">
+                             <!-- Testimonial Content
+                            <div class="testimonial-caption ">
+                                <div class="testimonial-top-cap">
+                                    <!-- SVG icon
+                                    <svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink"width="86px" height="63px">
+                                    <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 95, 19)" fill-opacity="0" fill="rgb(0, 0, 0)"
+                                    d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
+                                    </svg>
+                                    <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjn.</p>
+                                </div>
+                                <!-- founder
+                                <div class="testimonial-founder d-flex align-items-center">
+                                   <div class="founder-text">
+                                        <span>Jessya Inn</span>
+                                        <p>Co Founder</p>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Testimonial
+                        <div class="single-testimonial">
+                             <!-- Testimonial Content
+                            <div class="testimonial-caption ">
+                                <div class="testimonial-top-cap">
+                                    <!-- SVG icon -
+                                    <svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink"width="86px" height="63px">
+                                    <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 95, 19)" fill-opacity="0" fill="rgb(0, 0, 0)"
+                                    d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
+                                    </svg>
+                                    <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjn.</p>
+                                </div>
+                                <!-- founder -
+                                <div class="testimonial-founder d-flex align-items-center">
+                                   <div class="founder-text">
+                                        <span>Jessya Inn</span>
+                                        <p>Co Founder</p>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+    <!-- Team Start --
+    <div class="team-area section-padding30">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <!-- Section Tittle --
+                    <div class="section-tittle section-tittle5 mb-50">
+                        <div class="front-text">
+                            <h2 class="">Our team</h2>
+                        </div>
+                        <span class="back-text">exparts</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- single Tem --
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="assets/img/team/team1.png" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <span>UX Designer</span>
+                            <h3>Ethan Welch</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="assets/img/team/team2.png" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <span>UX Designer</span>
+                            <h3>Ethan Welch</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="assets/img/team/team3.png" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <span>UX Designer</span>
+                            <h3>Ethan Welch</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+</main>
+

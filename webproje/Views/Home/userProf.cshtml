@@ -1,0 +1,191 @@
+﻿@using webproje.Models;
+@model UserContext
+@{
+    ViewBag.Title = "userProf";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<main>
+    <!-- slider Area Start--
+    <div class="slider-area ">
+        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="../../temp/readBy/assets/img/hero/about.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap pt-100">
+                            <h2>About us</h2>
+                            <nav aria-label="breadcrumb ">
+                                <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Product</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End-->
+    <!-- About Area Start -->
+    <div class="slider-area ">
+        <div class="slider-active">
+            <div class="single-slider  hero-overly slider-height d-flex align-items-center" data-background="../../temp/readBy/assets/img/hero/h1_hero.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-11">
+                            <div class="container">
+                                <div class="main-body">
+
+                                    <!-- Breadcrumb >
+    <nav aria-label="breadcrumb" class="main-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+      </ol>
+    </nav>
+    <!-- /Breadcrumb -->
+
+                                    @using (Html.BeginForm("userProf", "Home", FormMethod.Post))
+                                    {
+                                        <div class="row gutters-sm">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="d-flex flex-column align-items-center text-center">
+                                                            <img src="../../temp/readBy/assets/img/team/team3.png" alt="Admin" class="rounded-circle" width="150">
+                                                            <div class="mt-3">
+                                                                <h4>@Model.user.name, @Model.user.lastName</h4>
+                                                                <p class="text-secondary mb-1">@Model.user.userName</p>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-3">
+                                                                <h6 class="mb-0">Adı :</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                                @Html.TextBoxFor(m => m.user.name, new
+                                                           {
+                                                               @id = "name",
+                                                               @type = "text",
+                                                               @class = "form-control valid",
+                                                               @onfocus = "this.placeholder = ''",
+                                                               @onblur = "this.placeholder = 'Adınızı yazin'",
+                                                               @placeholder = "Adınızı yazin"
+                                                           })
+                                                            </div>
+                                                        </div>
+                                                        <hr><div class="row">
+                                                            <div class="col-sm-3">
+                                                                <h6 class="mb-0">Soyadı :</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                                @Html.TextBoxFor(m => m.user.lastName, new
+                                                               {
+                                                               @id = "name",
+                                                               @type = "text",
+                                                               @class = "form-control valid",
+                                                               @onfocus = "this.placeholder = ''",
+                                                               @onblur = "this.placeholder = 'Soyadınızı yazin'",
+                                                               @placeholder = "soyadınızı yazin"
+                                                                 })
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-3">
+                                                                <h6 class="mb-0">kullanıcı adi :</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                                @Html.TextBoxFor(m => m.user.userName, new
+                                                           {
+                                                               @id = "name",
+                                                               @type = "text",
+                                                               @class = "form-control valid",
+                                                               @onfocus = "this.placeholder = ''",
+                                                               @onblur = "this.placeholder = 'kullanıcı adini yazin'",
+                                                               @placeholder = "kullanıcı adini yazin"
+                                                           })
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-3">
+                                                                <h6 class="mb-0">kullanıcı şifre :</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                                @Html.TextBoxFor(m => m.user.userPass, new
+                                                           {
+                                                               @id = "name",
+                                                               @type = "text",
+                                                               @class = "form-control valid",
+                                                               @onfocus = "this.placeholder = ''",
+                                                               @onblur = "this.placeholder = 'şifre yazin'",
+                                                               @placeholder = "şifre yazin"
+                                                           })
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-3">
+                                                                <h6 class="mb-0">email :</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                                @Html.TextBoxFor(m => m.user.eMail, new
+                                                           {
+                                                               @id = "name",
+                                                               @type = "text",
+                                                               @class = "form-control valid",
+                                                               @onfocus = "this.placeholder = ''",
+                                                               @onblur = "this.placeholder = 'email yazin'",
+                                                               @placeholder = "email yazin"
+                                                           })
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row">
+                                                            <div class="col-sm-3">
+                                                                <h6 class="mb-0">Iban :</h6>
+                                                            </div>
+                                                            <div class="col-sm-9 text-secondary">
+                                                                @Html.TextBoxFor(m => m.user.Iban, new
+                                                           {
+                                                               @id = "name",
+                                                               @type = "text",
+                                                               @class = "form-control valid",
+                                                               @onfocus = "this.placeholder = ''",
+                                                               @onblur = "this.placeholder = 'iban yazin'",
+                                                               @placeholder = "iban yazin"
+                                                           })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-primary">Bilgilerimi Güncelle</button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Area End -->
+
+</main>
+
